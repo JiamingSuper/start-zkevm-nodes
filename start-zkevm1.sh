@@ -27,4 +27,4 @@ sudo docker compose -f  zkevm-node/test/docker-compose.zkevm.yml up -d zkevm-jso
 
 # 获取节点信息，并提取 IP 地址
 MANAGER_IP=$(sudo docker info | grep -w "Node Address" | awk '{print $3}')
-echo "L1-node1 RPC地址: $MANAGER_IP:8123"
+echo "L2-node1 RPC地址: $MANAGER_IP:8123"
