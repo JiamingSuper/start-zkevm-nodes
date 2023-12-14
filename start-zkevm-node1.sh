@@ -9,10 +9,10 @@ sudo docker compose -f  geth-node/docker-compose.geth.yml up -d geth1
 
 # TODO 读取本机IP并设置给其他服务
 
-# # 构建zkNode
-# cd zkevm-node
-# sudo docker build -t zkevm-node -f ./Dockerfile .
-# cd ..
+# 构建zkNode
+cd zkevm-node
+sudo docker build -t zkevm-node -f ./Dockerfile .
+cd ..
 
 # 开启单个L2，依次启动服务
 sudo docker compose -f  zkevm-node/test/docker-compose.zkevm.yml up -d zkevm-state-db
