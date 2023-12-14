@@ -1,0 +1,101 @@
+version: "3"
+services:
+  geth1:
+    container_name: geth_node1
+    image: ethereum/client-go:v1.12.0
+    ports:
+      - "8545:8545"
+      - "30303:30303"
+    volumes:
+      - ./gethData/geth_data1:/geth_data
+    entrypoint: 
+      - geth
+      - --datadir
+      - /geth_data
+      - --networkid
+      - "1337"
+      - --keystore
+      - /geth_data/keystore
+      - --nodiscover
+      - --http
+      - --http.api
+      - admin,eth,debug,miner,net,txpool,personal,web3
+      - --http.addr
+      - "0.0.0.0"
+      - --http.corsdomain
+      - "*"
+      - --http.vhosts
+      - "*"
+      - --ws 
+      - --ws.origins
+      - "*" 
+      - --ws.addr
+      - "0.0.0.0"
+      - --port
+      - "30303"
+      - --authrpc.port
+      - "8551"
+      - --http.port
+      - "8545"
+      - --ws.port
+      - "8546"
+      - --unlock
+      - "0x47ea4e33aea698538f3aee94a917d2f0791b9d94"
+      - --password
+      - /geth_data/node1Password.txt
+      - --mine
+      - --miner.etherbase
+      - "0x47ea4e33aea698538f3aee94a917d2f0791b9d94"
+      - --allow-insecure-unlock
+      - --rpc.allow-unprotected-txs
+      - --syncmode
+      - full
+  geth2:
+    container_name: geth_node2
+    image: ethereum/client-go:v1.12.0
+    ports:
+      - "8145:8145"
+      - "30301:30301"
+    volumes:
+      - ./gethData/geth_data2:/geth_data:rw
+    entrypoint: 
+      - geth
+      - --datadir
+      - /geth_data
+      - --networkid
+      - "1337"
+      - --bootnodes
+      - "enode://1f44b33387802039704acfa424e716a821a7f22b3c057c5c17d63fee3d6b6c0001af4a839e2e049ec13524f0ffc45e6d6ba4864a816d6fd24e83cc188901aac8@192.168.10.35:30303"
+      - --http
+      - --http.api
+      - admin,eth,debug,miner,net,txpool,personal,web3
+      - --http.addr
+      - "0.0.0.0"
+      - --http.corsdomain
+      - "*"
+      - --http.vhosts
+      - "*"
+      - --ws 
+      - --ws.origins
+      - "*" 
+      - --ws.addr
+      - "0.0.0.0"
+      - --port
+      - "30301"
+      - --authrpc.port
+      - "8151"
+      - --http.port
+      - "8145"
+      - --ws.port
+      - "8146"
+      - --unlock
+      - "0x47ea4e33aea698538f3aee94a917d2f0791b9d94"
+      - --password
+      - /geth_data/node1Password.txt
+      - --mine
+      - --miner.etherbase
+      - "0x47ea4e33aea698538f3aee94a917d2f0791b9d94"
+      - --allow-insecure-unlock
+      - --rpc.allow-unprotected-txs
+      - --syncmode
+      - full
