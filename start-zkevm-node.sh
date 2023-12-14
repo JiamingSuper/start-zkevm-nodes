@@ -17,11 +17,12 @@ cd zkevm-node
 sudo docker build -t zkevm-node -f ./Dockerfile .
 cd ..
 
-# 获取节点信息，并提取 IP 地址（L1部署在管理节点）
+# 获取节点信息，并提取 IP 地址
 MANAGER_IP=$(sudo docker info | grep -w "Node Address" | awk '{print $3}')
-echo "Swarm管理节点IP地址为: $MANAGER_IP"
+echo "IP地址为: $MANAGER_IP"
 
 # 替换文件中的内容
+sed -i "s/enode:\/\/[a-f0-9]*@[^:]*:/enode:\/\/1f44b33387802039704acfa424e716a821a7f22b3c057c5c17d63fee3d6b6c0001af4a839e2e049ec13524f0ffc45e6d6ba4864a816d6fd24e83cc188901aac8@$MANAGER_IP:/" geth-node/docker-compose.geth.yml
 sed -i "s/enode:\/\/[a-f0-9]*@[^:]*:/enode:\/\/1f44b33387802039704acfa424e716a821a7f22b3c057c5c17d63fee3d6b6c0001af4a839e2e049ec13524f0ffc45e6d6ba4864a816d6fd24e83cc188901aac8@$MANAGER_IP:/" geth-node/docker-compose.geth2.yml
 sed -i "s#URL = \"http://[^:]*:8545\"#URL = \"http://$MANAGER_IP:8545\"#" zkevm-node/test/config/test.node.config.toml
 sed -i "s#URL = \"http://[^:]*:8545\"#URL = \"http://$MANAGER_IP:8545\"#" zkevm-node/test/config/test.node2.config.toml
