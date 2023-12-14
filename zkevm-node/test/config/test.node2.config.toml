@@ -57,7 +57,7 @@ GlobalQueue = 1024
 	MaxConns = 200
 
 [Etherman]
-URL = "http://192.168.10.35:8545"
+URL = "http://192.168.10.21:8545"
 ForkIDChunkSize = 20000
 MultiGasProvider = false
 	[Etherscan]
@@ -69,7 +69,7 @@ Port = 8123
 ReadTimeout = "60s"
 WriteTimeout = "60s"
 MaxRequestsPerIPAndSecond = 5000
-SequencerNodeURI = "http://192.168.10.35:8123"
+SequencerNodeURI = ""
 EnableL2SuggestedGasPricePolling = true
 	[RPC.WebSockets]
 		Enabled = true
