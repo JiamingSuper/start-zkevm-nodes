@@ -4,7 +4,7 @@
 if [ $# -eq 0 ]; then
   echo "使用本机8545端口作为L1节点地址"
 else
-  echo "使用$1:8545端口作为enode地址"
+  echo "使用$1:8545端口作为L1节点地址"
   sed -i "s#URL = \"http://[^:]*:8545\"#URL = \"http://$1:8545\"#" zkevm-node/test/config/test.node2.config.toml
 fi
 
