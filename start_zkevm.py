@@ -7,10 +7,10 @@ import time
 
 # git clone准备好的部署仓库及初始化geth data
 init_chain_commands_A = [
-    "sshpass -p '220718-ai' ssh hzhx@192.168.10.21 'cd /home/hzhx/Desktop/polygonzkevm/test && export HTTPS_PROXY='http://192.168.10.2:7890' &&  export HTTP_PROXY='http://192.168.10.2:7890' && export ALL_PROXY=socks5://192.168.10.2:7890 && echo '220718-ai' | sudo -S rm -rf ./start-zkevm-nodes && git clone https://github.com/JiamingSuper/start-zkevm-nodes.git && cd start-zkevm-nodes && echo '220718-ai' | sudo -S ./start-zkevm-node.sh'"
+    "sshpass -p '220718-ai' ssh hzhx@192.168.10.21 'cd /home/hzhx/Desktop/polygonzkevm/test && export HTTPS_PROXY='http://192.168.10.2:7890' &&  export HTTP_PROXY='http://192.168.10.2:7890' && export ALL_PROXY=socks5://192.168.10.2:7890 && echo '220718-ai' | sudo -S rm -rf ./start-zkevm-nodes && git clone https://github.com/JiamingSuper/start-zkevm-nodes.git && cd start-zkevm-nodes && echo '220718-ai' | sudo -S ./init-chains.sh'"
 ]
 init_chain_commands_B = [
-    "sshpass -p 'guangdian523' ssh aengine@192.168.10.35 'cd /home/aengine/Desktop/polygonzkevm/test && export HTTPS_PROXY='http://192.168.10.2:7890' &&  export HTTP_PROXY='http://192.168.10.2:7890' && export ALL_PROXY=socks5://192.168.10.2:7890 && echo 'guangdian523' | sudo -S rm -rf ./start-zkevm-nodes && git clone https://github.com/JiamingSuper/start-zkevm-nodes.git && cd start-zkevm-nodes && echo 'guangdian523' | sudo -S ./start-zkevm-node.sh'"
+    "sshpass -p 'guangdian523' ssh aengine@192.168.10.35 'cd /home/aengine/Desktop/polygonzkevm/test && export HTTPS_PROXY='http://192.168.10.2:7890' &&  export HTTP_PROXY='http://192.168.10.2:7890' && export ALL_PROXY=socks5://192.168.10.2:7890 && echo 'guangdian523' | sudo -S rm -rf ./start-zkevm-nodes && git clone https://github.com/JiamingSuper/start-zkevm-nodes.git && cd start-zkevm-nodes && echo 'guangdian523' | sudo -S ./init-chains.sh'"
 ]
 
 # 进入A机器，开启L1节点和L2节点各一个

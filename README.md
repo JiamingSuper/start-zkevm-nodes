@@ -8,7 +8,7 @@ zkevm-node：来自于官方的[zkevm-node仓库](https://github.com/0xPolygonHe
 
 #### sh脚本
 
-##### start-zkevm-node.sh
+##### init-chains.sh
 
 初始化L1节点所需数据。
 

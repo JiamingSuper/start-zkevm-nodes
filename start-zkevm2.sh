@@ -6,6 +6,8 @@ if [ $# -eq 0 ]; then
 else
   echo "使用$1:8545端口作为L1节点地址"
   sed -i "s#URL = \"http://[^:]*:8545\"#URL = \"http://$1:8545\"#" zkevm-node/test/config/test.node2.config.toml
+  sed -i "s#SequencerNodeURI = \"http://[^:]*:8123\"#SequencerNodeURI = \"http://$1:8123\"#" zkevm-node/test/config/test.node2.config.toml
+  sed -i "s#TrustedSequencerURL = \"http://[^:]*:8123\"#TrustedSequencerURL = \"http://$1:8123\"#" zkevm-node/test/config/test.node2.config.toml
 fi
 
 # 启动单个L2-node2节点（非可信定序器），依次启动服务

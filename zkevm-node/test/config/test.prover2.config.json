@@ -42,7 +42,7 @@
 
     "proverServerPort": 50051,
     "proverServerMockPort": 11114,
-    "proverServerMockTimeout": 10000000,
+    "proverServerMockTimeout": 15000000,
     "proverClientPort": 50051,
     "proverClientHost": "127.0.0.1",
 
@@ -76,8 +76,6 @@
     "dbFlushInParallel": false,
     "dbMTCacheSize": 1024,
     "dbProgramCacheSize": 512,
-    "dbNumberOfPoolConnections": 30,
-    "dbGetTree": true,
     "cleanerPollingPeriod": 600,
     "requestsPersistence": 3600,
     "maxExecutorThreads": 20,

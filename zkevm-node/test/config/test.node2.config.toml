@@ -69,7 +69,7 @@ Port = 8123
 ReadTimeout = "60s"
 WriteTimeout = "60s"
 MaxRequestsPerIPAndSecond = 5000
-SequencerNodeURI = ""
+SequencerNodeURI = "http://192.168.10.21:8123"
 EnableL2SuggestedGasPricePolling = true
 	[RPC.WebSockets]
 		Enabled = true
@@ -78,7 +78,7 @@ EnableL2SuggestedGasPricePolling = true
 [Synchronizer]
 SyncInterval = "1s"
 SyncChunkSize = 100
-TrustedSequencerURL = "http://zkevm-json-rpc-node2:8123" # If it is empty or not specified, then the value is read from the smc.
+TrustedSequencerURL = "http://192.168.10.21:8123" # If it is empty or not specified, then the value is read from the smc.
 L1SynchronizationMode = "sequential" # "sequential" or "parallel"
 	[Synchronizer.L1ParallelSynchronization]
 		MaxClients = 10
@@ -164,7 +164,7 @@ MaxGRPCMessageSize = 100000000
 [Metrics]
 Host = "0.0.0.0"
 Port = 9091
-Enabled = false
+Enabled = true
 ProfilingHost = "0.0.0.0"
 ProfilingPort = 6060
 ProfilingEnabled = true
