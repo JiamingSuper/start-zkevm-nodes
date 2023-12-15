@@ -67,7 +67,7 @@ services:
       - --networkid
       - "1337"
       - --bootnodes
-      - "enode://1f44b33387802039704acfa424e716a821a7f22b3c057c5c17d63fee3d6b6c0001af4a839e2e049ec13524f0ffc45e6d6ba4864a816d6fd24e83cc188901aac8@192.168.10.21:30303"
+      - "enode://3a931f53ac627e5d85f2fd07f09c5083c2c612d33cc4246da64c77451e8943fdc36f52de9cc3b9a9c00a84bf4006434c8fd2b9e16df4eaad2afdcab3944ec135@192.168.10.21:30303"
       - --http
       - --http.api
       - admin,eth,debug,miner,net,txpool,personal,web3
